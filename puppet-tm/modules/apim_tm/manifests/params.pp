@@ -24,6 +24,9 @@ class apim_tm::params {
 
   $template_list = [
     'repository/conf/deployment.toml',
+    'repository/conf/datasources/persistence-datasources.xml',
+    'repository/resources/conf/templates/repository/conf/event-processor.xml.j2',
+
   ]
 
   # Define file list
@@ -33,7 +36,7 @@ class apim_tm::params {
   ]
 
   $packages = ["unzip"]
-  $version = "3.0.0"
+  $version = "3.1.0"
 
   # Set the location the product packages should reside in (eg: "local" in the /files directory, "remote" in a remote location)
   $pack_location = "local"
@@ -121,5 +124,16 @@ class apim_tm::params {
   # ----- user-mgt.xml config params -----
   $admin_username = 'admin'
   $admin_password = 'admin'
+
+  # ----- event-processor.xml config params -----
+  $event_processor_enable_single_mode = true
+  $event_processor_enable_persistence = true
+
+  # ----- persistence-datastore.xml config params
+  $wso2persistence_db_url = "jdbc:oracle:thin:@localhost:1521/PERSISTENCE_DB_1"
+  $wso2persistence_db_username = 'PERSISTENCE_DB_1'
+  $wso2persistence_db_password = 'PERSISTENCE_DB_1_PASSWORD'
+  $wso2persistence_db_driver = 'oracle.jdbc.driver.OracleDriver'
+
 
 }

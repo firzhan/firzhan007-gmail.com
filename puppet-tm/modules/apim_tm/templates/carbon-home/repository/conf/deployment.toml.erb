@@ -5,7 +5,7 @@ server_role = "traffic-manager"
 offset = "0"
 
 [user_store]
-type = "database"
+type = "database_unique_id"
 
 [super_admin]
 username = "<%= @admin_username %>"
@@ -18,17 +18,42 @@ url = "<%= @wso2shared_db_url %>"
 username = "<%= @wso2shared_db_username %>"
 password = "<%= @wso2shared_db_password %>"
 driver = "<%= @wso2shared_db_driver %>"
+
 [database.shared_db.pool_options]
 validationQuery = "<%= @wso2shared_db_validation_query %>"
 
 [keystore.tls]
-file_name =  "wso2carbon.jks"
-type =  "JKS"
-password =  "wso2carbon"
-alias =  "wso2carbon"
+file_name = "wso2carbon.jks"
+type = "JKS"
+password = "wso2carbon"
+alias = "wso2carbon"
 key_password =  "wso2carbon"
 
 [truststore]
 file_name = "client-truststore.jks"
 type = "JKS"
 password = "wso2carbon"
+
+[keystore.primary]
+file_name =  "wso2carbon.jks"
+type =  "JKS"
+password =  "wso2carbon"
+alias =  "wso2carbon"
+key_password =  "wso2carbon"
+
+[keystore.internal]
+file_name =  "wso2carbon.jks"
+type =  "JKS"
+password =  "wso2carbon"
+alias =  "wso2carbon"
+key_password =  "wso2carbon"
+
+[keystore.truststore]
+file_name = "client-truststore.jks"
+type = "JKS"
+password = "wso2carbon"
+
+[event_processor]
+enable_single_mode = <%= @event_processor_enable_single_mode %>
+enable_persistence = <%= @event_processor_enable_persistence %>
+
