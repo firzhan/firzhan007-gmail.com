@@ -1,0 +1,58 @@
+[server]
+hostname = "<%= @hostname %>"
+node_ip = "<%= @node_ip %>"
+mode = "single"
+base_path = "${carbon.protocol}://${carbon.host}:${carbon.management.port}"
+serverDetails = "WSO2 IS as KM 5.10.0"
+userAgent = "WSO2 IS as KM 5.10.0"
+
+
+[super_admin]
+username = "<%= @admin_username %>"
+password = "<%= @admin_password %>"
+create_admin_account = true
+
+[user_store]
+type = "database_unique_id"
+
+[database.apim_db]
+type = "<%= @wso2am_db_type %>"
+url = "<%= @wso2am_db_url %>"
+username = "<%= @wso2am_db_username %>"
+password = "<%= @wso2am_db_password %>"
+[database.apim_db.pool_options]
+validationQuery = "<%= @wso2am_db_validation_query %>"
+
+[database.shared_db]
+type = "<%= @wso2shared_db_type %>"
+url = "<%= @wso2shared_db_url %>"
+username = "<%= @wso2shared_db_username %>"
+password = "<%= @wso2shared_db_password %>"
+[database.shared_db.pool_options]
+validationQuery = "<%= @wso2shared_db_validation_query %>"
+
+
+[keystore.primary]
+name = "wso2carbon.jks"
+password = "wso2carbon"
+
+[keystore.tls]
+file_name =  "wso2carbon.jks"
+type =  "JKS"
+password =  "wso2carbon"
+alias =  "wso2carbon"
+key_password =  "wso2carbon"
+
+
+[[event_listener]]
+id = "mutual_tls_authenticator"
+type = "org.wso2.carbon.identity.core.handler.AbstractIdentityHandler"
+name = "org.wso2.carbon.identity.oauth2.token.handler.clientauth.mutualtls.MutualTLSClientAuthenticator"
+order = "158"
+enable = false
+
+[[apim.throttling.url_group]]
+traffic_manager_urls = ["tcp://<%=@tm1_ip%>:9611"]
+traffic_manager_auth_urls = ["ssl://<%=@tm1_ip%>:9711"]
+type = "loadbalance"
+
