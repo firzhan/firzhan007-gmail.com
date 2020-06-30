@@ -143,6 +143,7 @@ class apim inherits apim::params {
     }
   }
 
+
   # Copy files to carbon home directory
   $file_list.each | String $file | {
     file { "${carbon_home}/${file}":
