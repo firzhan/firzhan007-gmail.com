@@ -128,10 +128,6 @@ class apim::params {
   $wso2am_db_driver = 'oracle.jdbc.driver.OracleDriver'
   $wso2am_db_validation_query = 'SELECT 1 FROM DUAL'
 
-  # ----- Carbon.xml config params -----
-
-  $mgw_dns_name = 'localhost'
-  $mgw_port = 9095
 
   # ----- user-mgt.xml config params -----
   $admin_username = 'admin'
