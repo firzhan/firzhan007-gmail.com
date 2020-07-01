@@ -21,5 +21,5 @@
 #Stage['main'] -> Stage['custom']
 
 node default {
-  class { "::apim": }
+  class { "::apim_is_km": }
 }

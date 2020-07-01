@@ -14,9 +14,9 @@
 #  limitations under the License.
 #----------------------------------------------------------------------------
 # inherits apim_common::params
-class apim::service {
+class apim_is_km::service {
 
-  $wso2_service_name = "wso2is_km"
+  $wso2_service_name = "wso2apim_is_km"
   service { "${wso2_service_name}":
     enable => true,
     ensure => running,

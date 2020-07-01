@@ -16,9 +16,9 @@
 
 # Class: apim
 # Init class of API Manager default profile
-class apim inherits apim::params {
+class apim_is_km inherits apim_is_km::params {
 
-  include '::apim::service'
+  include '::apim_is_km::service'
 
   # Install system packages
   package { $packages:

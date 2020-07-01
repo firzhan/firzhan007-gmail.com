@@ -16,7 +16,7 @@
 
 # Claas apim::params
 # This class includes all the necessary parameters.
-class apim::params {
+class apim_is_km::params {
 
   $packages = ["unzip"]
   $version = "5.10.0"
@@ -50,36 +50,15 @@ class apim::params {
   $pack_dir = "${target}/${profile}/packs"
   $wso2_service_name = "wso2${profile}"
 
+
   # ----- Profile configs -----
-  case $profile {
-    'apim_tm': {
-      $pack = "wso2am-${version}"
-      # $remote_pack = "<URL_TO_APIM_TRAFFICMANAGER_PACK>"
-      $server_script_path = "${product_dir}/${pack}/bin/wso2server.sh"
-      $pid_file_path = "${product_dir}/${pack}/wso2carbon.pid"
-      $optimize_params = "-Dprofile=traffic-manager"
-    }
-    'apim_is_km': {
-      $pack = "wso2is-km-${version}"
-      # $remote_pack = "<URL_TO_APIM_TRAFFICMANAGER_PACK>"
-      $server_script_path = "${product_dir}/${pack}/bin/wso2server.sh"
-      $pid_file_path = "${product_dir}/${pack}/wso2carbon.pid"
-      $optimize_params = ""
-    }
-    'apim_analytics_worker': {
-      $pack = "wso2am-analytics-${version}"
-      # $remote_pack = "<URL_TO_APIM_ANALYTICS_WORKER_PACK>"
-      $server_script_path = "${product_dir}/${pack}/bin/worker.sh"
-      $pid_file_path = "${product_dir}/${pack}/wso2/worker/runtime.pid"
-    }
-    default: {
-      $pack = "wso2am-${version}"
-      # $remote_pack = "<URL_TO_APIM_PACK>"
-      $server_script_path = "${product_dir}/${pack}/bin/wso2server.sh"
-      $pid_file_path = "${product_dir}/${pack}/wso2carbon.pid"
-      $optimize_params = ""
-    }
-  }
+
+  $pack = "wso2is-km-${version}"
+  # $remote_pack = "<URL_TO_APIM_TRAFFICMANAGER_PACK>"
+  $server_script_path = "${product_dir}/${pack}/bin/wso2server.sh"
+  $pid_file_path = "${product_dir}/${pack}/wso2carbon.pid"
+  $optimize_params = ""
+
 
   # Pack Directories
   $carbon_home = "${product_dir}/${pack}"
