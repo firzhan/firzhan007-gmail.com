@@ -112,6 +112,7 @@ class apim_is_km::params {
   $admin_username = 'admin'
   $admin_password = 'admin'
 
+
   # ----- Analytics config params -----
 
   # Configuration used for the databridge communication
