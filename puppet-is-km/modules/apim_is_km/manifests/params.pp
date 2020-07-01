@@ -44,7 +44,7 @@ class apim::params {
   $jdk_name = 'jdk1.8.0_241'
   $java_home = "${java_dir}/${jdk_name}"
 
-  $profile = "is_km"
+  $profile = "apim_is_km"
   $target = "/mnt"
   $product_dir = "${target}/${profile}"
   $pack_dir = "${target}/${profile}/packs"
@@ -59,7 +59,7 @@ class apim::params {
       $pid_file_path = "${product_dir}/${pack}/wso2carbon.pid"
       $optimize_params = "-Dprofile=traffic-manager"
     }
-    'is_km': {
+    'apim_is_km': {
       $pack = "wso2is-km-${version}"
       # $remote_pack = "<URL_TO_APIM_TRAFFICMANAGER_PACK>"
       $server_script_path = "${product_dir}/${pack}/bin/wso2server.sh"
