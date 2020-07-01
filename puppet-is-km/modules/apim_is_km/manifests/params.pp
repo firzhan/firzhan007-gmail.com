@@ -44,7 +44,7 @@ class apim::params {
   $jdk_name = 'jdk1.8.0_241'
   $java_home = "${java_dir}/${jdk_name}"
 
-  $profile = "apim"
+  $profile = "is_km"
   $target = "/mnt"
   $product_dir = "${target}/${profile}"
   $pack_dir = "${target}/${profile}/packs"
@@ -89,30 +89,30 @@ class apim::params {
   $try_count = 5
   $try_sleep = 5
 
-  $tm1_ip = "0.0.0.0"
-  $tm2_ip = "0.0.0.0"
+  $tm1_ip = "localhost"
+  $tm2_ip = "localhost"
 
 
   # ----- Master-datasources config params -----
 
-  $wso2am_db_url = 'jdbc:h2:./repository/database/WSO2AM_DB;DB_CLOSE_ON_EXIT=FALSE'
-  $wso2am_db_username = 'wso2carbon'
-  $wso2am_db_password = 'wso2carbon'
-  $wso2am_db_type = 'h2'
-  $wso2am_db_validation_query = 'SELECT 1'
+  #$wso2am_db_url = 'jdbc:h2:./repository/database/WSO2AM_DB;DB_CLOSE_ON_EXIT=FALSE'
+  #$wso2am_db_username = 'wso2carbon'
+  #$wso2am_db_password = 'wso2carbon'
+  #$wso2am_db_type = 'h2'
+  #$wso2am_db_validation_query = 'SELECT 1'
 
-  $wso2shared_db_url = 'jdbc:h2:./repository/database/WSO2SHARED_DB;DB_CLOSE_ON_EXIT=FALSE'
-  $wso2shared_db_username = 'wso2carbon'
-  $wso2shared_db_password = 'wso2carbon'
-  $wso2shared_db_type = 'h2'
-  $wso2shared_db_validation_query = 'SELECT 1'
+  #$wso2shared_db_url = 'jdbc:h2:./repository/database/WSO2SHARED_DB;DB_CLOSE_ON_EXIT=FALSE'
+  #$wso2shared_db_username = 'wso2carbon'
+  #$wso2shared_db_password = 'wso2carbon'
+  #$wso2shared_db_type = 'h2'
+  #$wso2shared_db_validation_query = 'SELECT 1'
 
-  #$wso2shared_db_url = 'jdbc:oracle:thin:@<RDS_DNS>:1521/WSO2_SHARED_DB'
-  #$wso2shared_db_username = '<WSO2_SHARED_DB>'
-  #$wso2shared_db_password = '<PASSWORD>'
-  #$wso2shared_db_type = 'oracle'
-  #$wso2shared_db_driver = 'oracle.jdbc.driver.OracleDriver'
-  #$wso2shared_db_validation_query = 'SELECT 1 FROM DUAL'
+  $wso2shared_db_url = 'jdbc:oracle:thin:@<RDS_DNS>:1521/WSO2_SHARED_DB'
+  $wso2shared_db_username = '<WSO2_SHARED_DB>'
+  $wso2shared_db_password = '<PASSWORD>'
+  $wso2shared_db_type = 'oracle'
+  $wso2shared_db_driver = 'oracle.jdbc.driver.OracleDriver'
+  $wso2shared_db_validation_query = 'SELECT 1 FROM DUAL'
 
 
   #$apim_analytics_db_url = 'jdbc:oracle:thin:@<RDS_DNS>:1521/AM_STATS_DB'
@@ -121,12 +121,12 @@ class apim::params {
   #$apim_analytics_db_driver = 'oracle.jdbc.driver.OracleDriver'
   #$apim_analytics_db_test_query = 'SELECT 1 FROM DUAL'
 
-  #$wso2am_db_url = 'jdbc:oracle:thin:@localhost:1521/WSO2_APIM_DB'
-  #$wso2am_db_username = '<WSO2_APIM_DB>'
-  #$wso2am_db_password = 'PASSWORD'
-  #$wso2am_db_type = 'oracle'
-  #$wso2am_db_driver = 'oracle.jdbc.driver.OracleDriver'
-  #$wso2am_db_validation_query = 'SELECT 1 FROM DUAL'
+  $wso2am_db_url = 'jdbc:oracle:thin:@localhost:1521/WSO2_APIM_DB'
+  $wso2am_db_username = '<WSO2_APIM_DB>'
+  $wso2am_db_password = 'PASSWORD'
+  $wso2am_db_type = 'oracle'
+  $wso2am_db_driver = 'oracle.jdbc.driver.OracleDriver'
+  $wso2am_db_validation_query = 'SELECT 1 FROM DUAL'
 
   # ----- Carbon.xml config params -----
 
