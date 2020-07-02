@@ -362,7 +362,6 @@ wso2.business.rules.manager:
   deployment_configs:
     -
      # <IP>:<HTTPS Port> of the Worker node
-     #<%=@apim_analytics_worker_node_dns_name%>:<%=@apim_analytics_worker_node_dns_port%>
      <% @worker_nodes.each do |node| %>
      - <%= node['ip'] %>:<%= node['port'] %>:
        # UUIDs of rule templates that are needed to be deployed on the node
