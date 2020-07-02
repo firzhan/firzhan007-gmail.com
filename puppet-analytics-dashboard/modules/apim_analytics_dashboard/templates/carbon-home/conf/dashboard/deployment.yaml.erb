@@ -220,11 +220,11 @@ wso2.datasources:
   dataSources:
     # Dashboard data source
     - name: WSO2_DASHBOARD_DB
-     description: The datasource used for dashboard feature
-     jndiConfig:
+      description: The datasource used for dashboard feature
+      jndiConfig:
        name: jdbc/DASHBOARD_DB
        useJndiReference: true
-     definition:
+      definition:
        type: RDBMS
        configuration:
           jdbcUrl: '<%= @dashboard_db_url %>'
@@ -362,7 +362,9 @@ wso2.business.rules.manager:
   deployment_configs:
     -
      # <IP>:<HTTPS Port> of the Worker node
-     <%=@apim_analytics_worker_node_dns_name%>:<%=@apim_analytics_worker_node_dns_port%>
+     #<%=@apim_analytics_worker_node_dns_name%>:<%=@apim_analytics_worker_node_dns_port%>
+     <% @worker_nodes.each do |node| %>
+     - <%= node['ip'] %>:<%= node['port'] %>:
        # UUIDs of rule templates that are needed to be deployed on the node
        - stock-data-analysis
        - stock-exchange-input
@@ -372,6 +374,7 @@ wso2.business.rules.manager:
        - http-analytics-processing
        - message-tracing-source-template
        - message-tracing-app-template
+      <% end %>
   # credentials for worker nodes
   username: <%= @worker_node_dns_admin_username %>
   password: <%= @worker_node_dns_admin_password %>

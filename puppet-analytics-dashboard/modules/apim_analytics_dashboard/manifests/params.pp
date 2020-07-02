@@ -48,7 +48,7 @@ class apim_analytics_dashboard::params {
   $jdk_name = 'jdk1.8.0_241'
   $java_home = "${java_dir}/${jdk_name}"
 
-  $profile = "apim_analytics_worker"
+  $profile = "apim_analytics_dashboard"
   $target = "/mnt"
   $product_dir = "${target}/${profile}"
   $pack_dir = "${target}/${profile}/packs"
@@ -178,4 +178,17 @@ class apim_analytics_dashboard::params {
   # Carbon Configuration Parameters
   $wso2_carbon_id = 'wso2-am-analytics-dashboard'
   $dashboard_dns_name = 'localhost'
+
+  # worker configurations
+  # ip: ip of the worker node
+  # port: wso2_transport_msf4j_https_port of the worker node given under host_vars
+  $worker_nodes = [
+    {
+      ip => 'localhost',
+      port => '9444'
+    }
+  ]
+
+  $worker_node_dns_admin_username = 'admin'
+  $worker_node_dns_admin_password = 'admin'
 }
