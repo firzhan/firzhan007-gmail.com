@@ -36,7 +36,7 @@ databridge.config:
   keyStoreLocation : '${sys:carbon.home}/resources/security/wso2carbon.jks'
     # Keystore password
     # THIS IS A MANDATORY FIELD
-  keyStorePassword : 'wso2carbon'
+  keyStorePassword : <%= @key_store_key_password %>
     # Session Timeout value in mins
     # THIS IS A MANDATORY FIELD
   clientTimeoutMin: 30
@@ -87,7 +87,7 @@ data.agent.config:
         # Trust store path
       trustStorePath: '${sys:carbon.home}/resources/security/client-truststore.jks'
         # Trust store password
-      trustStorePassword: 'wso2carbon'
+      trustStorePassword: '<%= @trust_store_key_password %>'
         # Queue Size
       queueSize: 32768
         # Batch Size
@@ -136,7 +136,7 @@ data.agent.config:
         # Trust store path
       trustStorePath: '${sys:carbon.home}/resources/security/client-truststore.jks'
         # Trust store password
-      trustStorePassword: 'wso2carbon'
+      trustStorePassword: '<%= @trust_store_key_password %>'
         # Queue Size
       queueSize: 32768
         # Batch Size
@@ -397,8 +397,8 @@ wso2.transport.http:
       port: 9640
       scheme: https
       keyStoreFile: "${carbon.home}/resources/security/wso2carbon.jks"
-      keyStorePassword: wso2carbon
-      certPass: wso2carbon
+      keyStorePassword: <%= @key_store_key_password %>
+      certPass: <%= @keystore_cert_pass %>
 
 ## Dashboard data provider authorization
 data.provider.configs:
