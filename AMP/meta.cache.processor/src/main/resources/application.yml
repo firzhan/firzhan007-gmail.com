@@ -1,0 +1,12 @@
+accc:
+  metadata-cache:
+    data-recipient-hostname: run.mocky.io/v3/a4eb094f-5195-45fb-94c9-e5e9cc68b544
+    software-status-hostname: run.mocky.io/v3/eeb990a8-29b6-46cf-9eb1-215d6f9c586c
+    x-v: 1
+    delay: 180000
+
+kafka:
+  dataRecipientTopicName: dataRecipientTopic
+  partitionCount: 1
+  replicationFactor: 1
+  bootstrapAddress: 192.168.20.10:9092
